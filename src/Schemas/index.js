@@ -14,11 +14,14 @@ const passwordRules = /^(?=.*[A-Z])(?=.*[a-z]{4})(?=.*\d{2}).{7}$/;
  });
 
 export const signupValidationSchema = Yup.object().shape({
-  firstName: Yup.string().required("required"),
+  firstName: Yup.string()
+    .min(2, "Too Short!")
+    .max(70, "Too Long!")
+    .required("required"),
   lastName: Yup.string().required("required"),
   password: Yup.string()
     .min(7)
-    .matches(passwordRules, { mesaage: "Please create a stronger password" })
+    .matches(passwordRules, { message: "Please create a stronger password" })
     .required("required"),
   confirmPassword: Yup.string().oneOf(
     [Yup.ref("password"), null],
