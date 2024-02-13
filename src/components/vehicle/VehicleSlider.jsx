@@ -28,7 +28,7 @@ const VehicleSlider = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed:450 ,
+    speed:400 ,
     slidesToShow: 4,
     slidesToScroll: 1,
   };
