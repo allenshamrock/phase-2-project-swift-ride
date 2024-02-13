@@ -9,7 +9,7 @@
         "mileage": 25000,
         "price_per_day": 50.00,
         "available": true,
-        "image": "https://example.com/toyota_camry.jpg",
+        "image": "https://shorturl.at/aEGN3",
         "vehicle_type": "Sedan",
         "gearbox": "Automatic"
       },
@@ -22,7 +22,7 @@
         "mileage": 20000,
         "price_per_day": 45.00,
         "available": true,
-        "image": "https://example.com/ford_focus.jpg",
+        "image": "https://rb.gy/ge0u3i",
         "vehicle_type": "Hatchback",
         "gearbox": "Automatic"
       },
@@ -35,7 +35,7 @@
         "mileage": 15000,
         "price_per_day": 55.00,
         "available": true,
-        "image": "https://example.com/honda_accord.jpg",
+        "image": "https://rb.gy/thbcxo",
         "vehicle_type": "Sedan",
         "gearbox": "Automatic"
       },
@@ -48,7 +48,7 @@
         "mileage": 18000,
         "price_per_day": 48.00,
         "available": true,
-        "image": "https://example.com/chevrolet_malibu.jpg",
+        "image": "https://rb.gy/ifzcb7",
         "vehicle_type": "Sedan",
         "gearbox": "Automatic"
       },
@@ -61,7 +61,7 @@
         "mileage": 22000,
         "price_per_day": 47.00,
         "available": true,
-        "image": "https://example.com/nissan_altima.jpg",
+        "image": "https://rb.gy/hctw8z",
         "vehicle_type": "Sedan",
         "gearbox": "Automatic"
       },
@@ -74,7 +74,7 @@
         "mileage": 19000,
         "price_per_day": 46.00,
         "available": true,
-        "image": "https://example.com/hyundai_sonata.jpg",
+        "image": "https://rb.gy/1v847o",
         "vehicle_type": "Sedan",
         "gearbox": "Automatic"
       },
@@ -87,7 +87,7 @@
         "mileage": 16000,
         "price_per_day": 49.00,
         "available": true,
-        "image": "https://example.com/volkswagen_jetta.jpg",
+        "image": "https://shorturl.at/hHOP7",
         "vehicle_type": "Sedan",
         "gearbox": "Automatic"
       },
@@ -100,7 +100,7 @@
         "mileage": 24000,
         "price_per_day": 52.00,
         "available": true,
-        "image": "https://example.com/mazda_mazda6.jpg",
+        "image": "https://shorturl.at/htzJ1",
         "vehicle_type": "Sedan",
         "gearbox": "Automatic"
       },
@@ -113,7 +113,7 @@
         "mileage": 21000,
         "price_per_day": 53.00,
         "available": true,
-        "image": "https://example.com/subaru_legacy.jpg",
+        "image": "https://shorturl.at/rQT68",
         "vehicle_type": "Sedan",
         "gearbox": "Automatic"
       },
