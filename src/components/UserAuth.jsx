@@ -36,7 +36,7 @@ const UserAuth = () => {
     firstName: "",
     lastName: "",
     password: "",
-    confirmPassword:'',
+    confirmPassword: "",
   };
 
   // Reset the form after successful submission
@@ -47,7 +47,6 @@ const UserAuth = () => {
     });
   };
 
-  
   function handleClickModal(clickedStatus) {
     console.log("clickedStatus");
     setActiveStatus(clickedStatus);
@@ -202,8 +201,9 @@ const UserAuth = () => {
                       ) : (
                         <></>
                       )}
+
                       <Button
-                        width={activeStatus === "sigin" ? "30%" : "100%"}
+                        width={activeStatus === "signin" ? "30%" : "100%"}
                         bg="#32bb78"
                         variant="solid"
                         type="submit"
