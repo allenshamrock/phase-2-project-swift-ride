@@ -45,7 +45,7 @@ const DatePicker = () => {
         if (selectedDate >= new Date()) {
             setDropoffDate(selectedDate.toISOString().split('T')[0]);
         } else {
-            console.error('Please select a future date for drop-off.');
+            console.error('Please select a future date.');
         }
     };
 
