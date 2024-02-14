@@ -27,16 +27,18 @@ import { Formik, Form, Field } from "formik";
 const UserAuth = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [activeStatus, setActiveStatus] = useState("");
+  const [isSignIn, setIsSignIn] = useState(false);
   const toast = useToast();
 
   const signinInitialValues = {
-    email: "",
+    name: "",
     password: "",
   };
 
   const signupInitialValues = {
     firstName: "",
     lastName: "",
+    email: "",
     password: "",
     confirmPassword: "",
   };
@@ -47,6 +49,8 @@ const UserAuth = () => {
       values:
         activeStatus === "signin" ? signinInitialValues : signupInitialValues,
     });
+    setIsSignIn(true);
+    onClose()
   };
 
   function handleClickModal(clickedStatus) {
@@ -55,9 +59,9 @@ const UserAuth = () => {
   }
 
   // Toast notification function
-  const showToast = () => {
+  const showToast = (name) => {
     toast({
-      title: "Account created.",
+      title: `Account created, ${name}!`,
       description: "We've created your account for you.",
       status: "success",
       duration: 5000,
@@ -66,9 +70,9 @@ const UserAuth = () => {
     });
   };
 
-  const showToastSignIn = () => {
+  const showToastSignIn = (name) => {
     toast({
-      title: "Welcome back! .",
+      title: `${name}, Welcome back !`,
       description: "You've successfully logged in.",
       status: "success",
       duration: 5000,
@@ -106,26 +110,26 @@ const UserAuth = () => {
               onSubmit={(values, actions) => {
                 handleFormSubmit(values, actions);
                 if (activeStatus === "signup") {
-                  showToast();
+                  showToast(values.firstName); // Pass firstName to showToast
                 } else if (activeStatus === "signin") {
-                  showToastSignIn();
+                  showToastSignIn(values.name);
                 }
               }}
             >
               {activeStatus === "signin" ? (
                 <Form>
                   <Stack direction="column" spacing={8}>
-                    <Field name="email">
+                    <Field name="name">
                       {({ field, form }) => (
                         <FormControl
-                          isInvalid={form.errors.email && form.touched.email}
+                          isInvalid={form.errors.name && form.touched.name}
                         >
-                          <FormLabel>Email </FormLabel>
-                          <Input {...field} type="type" id="email" />
+                          <FormLabel>User Name </FormLabel>
+                          <Input {...field} type="name" id="name" />
                           <FormErrorMessage>
-                            {form.errors.email &&
-                              form.touched.email &&
-                              form.errors.email}
+                            {form.errors.name &&
+                              form.touched.name &&
+                              form.errors.name}
                           </FormErrorMessage>
                         </FormControl>
                       )}
@@ -138,7 +142,7 @@ const UserAuth = () => {
                           }
                         >
                           <FormLabel>Password</FormLabel>
-                          <Input {...field} type="password" id="email" />
+                          <Input {...field} type="password" id="password" />
                           <FormErrorMessage>
                             {form.errors.password &&
                               form.touched.password &&
@@ -186,11 +190,26 @@ const UserAuth = () => {
                           }
                         >
                           <FormLabel>Last Name</FormLabel>
-                          <Input {...field} type="text" />
+                          <Input {...field} type="text" id="lastName" />
                           <FormErrorMessage>
                             {form.errors.lastName &&
                               form.touched.lastName &&
                               form.errors.lastName}
+                          </FormErrorMessage>
+                        </FormControl>
+                      )}
+                    </Field>
+                    <Field name="email">
+                      {({ field, form }) => (
+                        <FormControl
+                          isInvalid={form.errors.email && form.touched.email}
+                        >
+                          <FormLabel>Email </FormLabel>
+                          <Input {...field} type="email" id="email" />
+                          <FormErrorMessage>
+                            {form.errors.email &&
+                              form.touched.email &&
+                              form.errors.email}
                           </FormErrorMessage>
                         </FormControl>
                       )}
@@ -203,7 +222,7 @@ const UserAuth = () => {
                           }
                         >
                           <FormLabel>Password</FormLabel>
-                          <Input {...field} type="password" />
+                          <Input {...field} type="password" id="password" />
                           <FormErrorMessage>
                             {form.errors.password &&
                               form.touched.password &&
@@ -221,7 +240,11 @@ const UserAuth = () => {
                           }
                         >
                           <FormLabel> Confirm Password</FormLabel>
-                          <Input {...field} type="password" />
+                          <Input
+                            {...field}
+                            type="password"
+                            id="confirmPassword"
+                          />
                           <FormErrorMessage>
                             {form.errors.confirmPassword &&
                               form.touched.confirmPassword &&
@@ -253,20 +276,24 @@ const UserAuth = () => {
         p={"3"}
       >
         <ButtonGroup>
-          <Button
-            bg="#2BD083"
-            size="sm"
-            onClick={() => handleClickModal("signin")}
-          >
-            Sign in
-          </Button>
-          <Button
-            bg="#32bb78"
-            size="sm"
-            onClick={() => handleClickModal("signup")}
-          >
-            Sign up
-          </Button>
+          {activeStatus !== "signin" && (
+            <Button
+              bg="#2BD083"
+              size="sm"
+              onClick={() => handleClickModal("signin")}
+            >
+              {isSignIn ? "Sign Out" : "Sign In"}
+            </Button>
+          )}
+          {activeStatus !== "signup" && (
+            <Button
+              bg="#32bb78"
+              size="sm"
+              onClick={() => handleClickModal("signup")}
+            >
+              {isSignIn ? "Sign Out" : "Sign Up"}
+            </Button>
+          )}
         </ButtonGroup>
       </Flex>
     </div>
