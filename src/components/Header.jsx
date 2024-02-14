@@ -1,5 +1,6 @@
 import { Heading } from "@chakra-ui/react";
 import Navbar from "./Navbar";
+import UserAuth from "./UserAuth";
 
 function Header() {
   return (
@@ -9,9 +10,7 @@ function Header() {
       </Heading>
       <Navbar />
       <div className="controls">
-        <button>Login</button>
-        <button>Sign-up</button>
-        <button>Dark mode</button>
+    <UserAuth/>
       </div>
     </header>
   );
