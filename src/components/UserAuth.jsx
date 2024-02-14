@@ -6,6 +6,7 @@ import {
 import {
   Modal,
   FormControl,
+  useToast,
   FormErrorMessage,
   FormLabel,
   Input,
@@ -26,6 +27,7 @@ import { Formik, Form, Field } from "formik";
 const UserAuth = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [activeStatus, setActiveStatus] = useState("");
+  const toast = useToast();
 
   const signinInitialValues = {
     email: "",
@@ -48,10 +50,33 @@ const UserAuth = () => {
   };
 
   function handleClickModal(clickedStatus) {
-    console.log("clickedStatus");
     setActiveStatus(clickedStatus);
     onOpen();
   }
+
+  // Toast notification function
+  const showToast = () => {
+    toast({
+      title: "Account created.",
+      description: "We've created your account for you.",
+      status: "success",
+      duration: 5000,
+      isClosable: true,
+      position: "top",
+    });
+  };
+
+  const showToastSignIn = () => {
+    toast({
+      title: "Welcome back! .",
+      description: "You've successfully logged in.",
+      status: "success",
+      duration: 5000,
+      isClosable: true,
+      position: "top",
+    });
+  };
+
   return (
     <div>
       <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
@@ -78,7 +103,14 @@ const UserAuth = () => {
                   ? signinValidationSchema
                   : signupValidationSchema
               }
-              onSubmit={handleFormSubmit}
+              onSubmit={(values, actions) => {
+                handleFormSubmit(values, actions);
+                if (activeStatus === "signup") {
+                  showToast();
+                } else if (activeStatus === "signin") {
+                  showToastSignIn();
+                }
+              }}
             >
               {activeStatus === "signin" ? (
                 <Form>
@@ -115,6 +147,15 @@ const UserAuth = () => {
                         </FormControl>
                       )}
                     </Field>
+
+                    <Button
+                      width="30%"
+                      bg={"#32bb78"}
+                      variant="outline"
+                      type="submit"
+                    >
+                      Sign In
+                    </Button>
                   </Stack>
                 </Form>
               ) : (
@@ -189,28 +230,14 @@ const UserAuth = () => {
                         </FormControl>
                       )}
                     </Field>
-                    <Stack direction="row" spacing={4}>
-                      {activeStatus === "signin" ? (
-                        <Button
-                          width="70%"
-                          colorScheme="teal"
-                          variant="outline"
-                        >
-                          Sign In
-                        </Button>
-                      ) : (
-                        <></>
-                      )}
-
-                      <Button
-                        width={activeStatus === "signin" ? "30%" : "100%"}
-                        bg="#32bb78"
-                        variant="solid"
-                        type="submit"
-                      >
-                        Sign Up
-                      </Button>
-                    </Stack>
+                    <Button
+                      width={activeStatus === "signin" ? "30%" : "100%"}
+                      bg="#32bb78"
+                      variant="solid"
+                      type="submit"
+                    >
+                      Sign Up
+                    </Button>
                   </Stack>
                 </Form>
               )}
