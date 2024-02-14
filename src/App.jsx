@@ -1,12 +1,14 @@
-import React from 'react'
-import UserAuth from './components/UserAuth'
 
-const App = () => {
+import Applayout from "./Applayout";
+import { BrowserRouter } from "react-router-dom";
+function App() {
   return (
-    <div>
-      <UserAuth/>
-    </div>
-  )
+    <>
+      <BrowserRouter>
+        <Applayout />
+      </BrowserRouter>
+    </>
+  );
 }
 
-export default App
+export default App;
