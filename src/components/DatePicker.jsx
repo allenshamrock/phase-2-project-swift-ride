@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react";
 // import { GrLocation } from "react-icons/gr";
 // import { IoMdSearch } from "react-icons/io";
-import { BsSearch } from "react-icons/bs";
+// import { BsSearch } from "react-icons/bs";
+// import { SearchIcon } from "@chakra-ui/icons";
+import {
+  Box,
+  Center,
+  Input,
+  Stack,
+} from "@chakra-ui/react";
 
 const DatePicker = () => {
   const [pickupDate, setPickupDate] = useState("");
@@ -35,7 +42,7 @@ const DatePicker = () => {
   const handlePickupDateChange = (e) => {
     const selectedDate = new Date(e.target.value);
     if (selectedDate >= new Date()) {
-      setPickupDate(selectedDate.toISOString().split("T")[0]);
+      setPickupDate(selectedDate.toISOString().split("T")[0] + "T00:00");
     } else {
       console.error("Please select a future date for pickup.");
     }
@@ -44,7 +51,7 @@ const DatePicker = () => {
   const handleDropoffDateChange = (e) => {
     const selectedDate = new Date(e.target.value);
     if (selectedDate >= new Date()) {
-      setDropoffDate(selectedDate.toISOString().split("T")[0]);
+      setDropoffDate(selectedDate.toISOString().split("T")[0] + "T00:00");
     } else {
       console.error("Please select a future date.");
     }
@@ -55,64 +62,53 @@ const DatePicker = () => {
   };
 
   return (
-    <div className="date-picker">
-      {/* Location section */}
-      <div className="date-picker-item">
-        <span>
-          {/* <GrLocation className="pin-icon" /> */}
-          Location
-        </span>
-        <input
-          className="input"
-          type="text"
+    <Stack spacing={3} direction={"row"} mt={"5"}>
+      <Center bg={"White"} color={"black"} h={"100px"}  borderRadius={"10"} w={'850px'}  gap={'3'}>
+        <Input
+          variant="filled"
           placeholder="Where are you going?"
+          w={"200px"}
         />
-      </div>
-      {/* Pickup date section */}
-      <div className="date-picker-item">
-        <span>Pickup date</span>
-        <input
-          className="input"
-          type="date"
+        <Input
+          placeholder="Select Date and Time"
+          size="md"
+          type="datetime-local"
+          w={"200px"}
           value={pickupDate}
           min={new Date().toISOString().split("T")[0]}
           onChange={handlePickupDateChange}
         />
-      </div>
-
-      {/* Dropoff date section */}
-      <div className="date-picker-item">
-        <span>Drop-off date</span>
-        <input
-          className="input"
-          type="date"
+        <Input
+          placeholder="Select Date and Time"
+          size="md"
+          type="datetime-local"
+          w={"200px"}
           value={dropoffDate}
           min={pickupDate || new Date().toISOString().split("T")[0]}
           onChange={handleDropoffDateChange}
         />
-      </div>
-
-      {/* Search bar section */}
-      <div className="search-div"style={{ position:"relative"}}>
-        <BsSearch style={{ fontSize: "1.2rem", position:"absolute",left:"15px"}} />
-        <input
-          className="input"
+        <Input
+          variant="flushed"
           type="text"
-          placeholder="Search for cars..."
+          placeholder="Search for cars.."
+          fontSize={"1rem"}
+          w={"200px"}
           value={searchText}
           onChange={handleSearchChange}
           style={{ paddingLeft: "24px" }}
         />
         {searchResult.length === 0 && searchText && <span>No cars found</span>}
-      </div>
-      {/* Display search result
+      </Center>
+      <Box>
+        {/* Display search result
             {searchResult.map(car => (
                 <tr key={car.id}>
                     <td>{car.model}</td>
                     <td><img src={car.image} alt={car.model} /></td>
                 </tr>
             ))} */}
-    </div>
+      </Box>
+    </Stack>
   );
 };
 
