@@ -2,6 +2,7 @@ import { Heading } from "@chakra-ui/react";
 import herovideo from "../assets/SwiftHero.mp4";
 // import bgvideo from "../assets/SwiftHero.mp4";
 import Header from "./Header";
+import DatePicker from "./DatePicker";
 
 function Hero() {
   return (
@@ -16,6 +17,7 @@ function Hero() {
           Discover comfort, safety, and style with our premium car fleet,<br /> Book
           effortlessly for a memorable journey.
         </p>
+    <DatePicker/>
        </div>
       </div>
     </div>
