@@ -3,9 +3,12 @@ import herovideo from "../assets/SwiftHero.mp4";
 // import bgvideo from "../assets/SwiftHero.mp4";
 import Header from "./Header";
 import DatePicker from "./DatePicker";
+import VehicleSlider from "./vehicle/VehicleSlider";
+
 
 function Hero() {
   return (
+    <>
     <div className="hero">
       <div className="overlay"></div>
       <video src={herovideo} autoPlay loop muted/>
@@ -21,6 +24,8 @@ function Hero() {
        </div>
       </div>
     </div>
+    <VehicleSlider/>
+    </>
   );
 }
 

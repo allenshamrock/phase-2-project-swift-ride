@@ -13,6 +13,7 @@ function Applayout() {
         <Route path="/Contact" element={<Contact/>} />
         <Route path="/Hire" element={<Hire/>} />
     </Routes>
+    
     </>
   );
 }
