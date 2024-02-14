@@ -1,5 +1,4 @@
-import React from 'react';
-import VehicleSlider from './components/vehicle/VehicleSlider'; 
+import React from "react";
 
 import Applayout from "./Applayout";
 import { BrowserRouter } from "react-router-dom";
