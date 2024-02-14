@@ -4,8 +4,8 @@ import * as Yup from "yup";
 const passwordRules = /^(?=.*[A-Z])(?=.*[a-z]{4})(?=.*\d{2}).{7}$/;
 
  export const signinValidationSchema = Yup.object().shape({
-   email: Yup.string()
-     .email("Please enter a valid email address")
+   name: Yup.string()
+     .label("Please enter your user name")
      .required("required"),
    password: Yup.string()
      .min(6)
