@@ -1,14 +1,12 @@
-import React from 'react';
-import './App.css'; // Assuming you have a CSS file for styling
-import DatePicker from './components/DatePicker';
+import React from 'react'
+import UserAuth from './components/UserAuth'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <DatePicker />
+    <div>
+      <UserAuth/>
     </div>
-  );
+  )
 }
 
-export default App;
-
+export default App
