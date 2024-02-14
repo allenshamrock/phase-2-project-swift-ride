@@ -1,12 +1,14 @@
-import React from 'react';
-import VehicleSlider from './components/vehicle/VehicleSlider'; 
 
-const App = () => {
+import Applayout from "./Applayout";
+import { BrowserRouter } from "react-router-dom";
+function App() {
   return (
-    <div className='vehicle-bazzar'>
-      <VehicleSlider />
-    </div>
+    <>
+      <BrowserRouter>
+        <Applayout />
+      </BrowserRouter>
+    </>
   );
-};
+}
 
 export default App;
