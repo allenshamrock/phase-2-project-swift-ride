@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { GrLocation } from "react-icons/gr";
+// import { GrLocation } from "react-icons/gr";
 // import { IoMdSearch } from "react-icons/io";
 import { BsSearch } from "react-icons/bs";
 
@@ -59,7 +59,7 @@ const DatePicker = () => {
       {/* Location section */}
       <div className="date-picker-item">
         <span>
-          <GrLocation className="pin-icon" />
+          {/* <GrLocation className="pin-icon" /> */}
           Location
         </span>
         <input
