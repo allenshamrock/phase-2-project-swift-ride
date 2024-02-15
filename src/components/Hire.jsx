@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import Header from "./Header";
 import CarItem from "./CarItems";
-import { Flex, Spinner, Text } from "@chakra-ui/react";
+import { Flex, Spinner, Text, Center } from "@chakra-ui/react";
+import DatePicker from "./DatePicker"
 
 function Hire() {
   const [carData, setCarData] = useState(null);
@@ -29,6 +30,7 @@ function Hire() {
   return (
     <>
       <Header />
+      <Center> <DatePicker/> </Center>
       {loadState ? (
         <Flex
           justify={"center"}
@@ -46,6 +48,7 @@ function Hire() {
           />
           <Text fontWeight={"bold"}>Please wait, Loading data..</Text>
         </Flex>
+        
       ) : (
         <CarItem  data={carData}/>
       )}

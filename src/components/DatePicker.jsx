@@ -62,7 +62,7 @@ const DatePicker = () => {
   };
 
   return (
-    <Stack spacing={3} direction={"row"} mt={"5"}>
+    <Stack spacing={3} direction={"row"} pt={"80px"}>
       <Center bg={"White"} color={"black"} h={"100px"}  borderRadius={"10"} w={'850px'}  gap={'3'}>
         <Input
           variant="filled"
