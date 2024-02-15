@@ -27,7 +27,7 @@ import { Formik, Form, Field } from "formik";
 const UserAuth = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [activeStatus, setActiveStatus] = useState("");
-  const [isSignIn, setIsSignIn] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(false); // State to manage sign-in status
   const toast = useToast();
 
   const signinInitialValues = {
@@ -49,13 +49,29 @@ const UserAuth = () => {
       values:
         activeStatus === "signin" ? signinInitialValues : signupInitialValues,
     });
-    setIsSignIn(true);
-    onClose()
+    if (activeStatus === "signup") {
+      showToast(values.firstName); 
+    } else if (activeStatus === "signin") {
+      showToastSignIn(values.name);
+    }
+    setIsSignedIn(true); // Set sign-in status to true upon successful login
+    onClose();
   };
 
   function handleClickModal(clickedStatus) {
-    setActiveStatus(clickedStatus);
-    onOpen();
+    if (clickedStatus === "signout") {
+      setIsSignedIn(false); // Set sign-in status to false upon signing out
+      toast({
+        title: "Signed out",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    } else {
+      setActiveStatus(clickedStatus);
+      onOpen();
+    }
   }
 
   // Toast notification function
@@ -109,11 +125,6 @@ const UserAuth = () => {
               }
               onSubmit={(values, actions) => {
                 handleFormSubmit(values, actions);
-                if (activeStatus === "signup") {
-                  showToast(values.firstName); // Pass firstName to showToast
-                } else if (activeStatus === "signin") {
-                  showToastSignIn(values.name);
-                }
               }}
             >
               {activeStatus === "signin" ? (
@@ -276,23 +287,35 @@ const UserAuth = () => {
         p={"3"}
       >
         <ButtonGroup>
-          {activeStatus !== "signin" && (
+          {isSignedIn ? ( 
             <Button
               bg="#2BD083"
               size="sm"
-              onClick={() => handleClickModal("signin")}
+              onClick={() => handleClickModal("signout")}
             >
-              {isSignIn ? "Sign Out" : "Sign In"}
+              Sign Out
             </Button>
-          )}
-          {activeStatus !== "signup" && (
-            <Button
-              bg="#32bb78"
-              size="sm"
-              onClick={() => handleClickModal("signup")}
-            >
-              {isSignIn ? "Sign Out" : "Sign Up"}
-            </Button>
+          ) : (
+            <>
+              {activeStatus !== "signin" && (
+                <Button
+                  bg="#2BD083"
+                  size="sm"
+                  onClick={() => handleClickModal("signin")}
+                >
+                  Sign In
+                </Button>
+              )}
+              {activeStatus !== "signup" && (
+                <Button
+                  bg="#32bb78"
+                  size="sm"
+                  onClick={() => handleClickModal("signup")}
+                >
+                  Sign Up
+                </Button>
+              )}
+            </>
           )}
         </ButtonGroup>
       </Flex>
