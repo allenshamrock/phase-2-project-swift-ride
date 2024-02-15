@@ -15,20 +15,19 @@ const Navbar = () => {
     <Flex
       bg={"#fff"}
       display={{ base: "flex", lg: "flex" }}
-      width={{ base: "100%", lg: "auto" }}
-      flexDirection={{base:'column',lg:"row"}}
-      gap={12}
       alignItems={"center"}
       fontSize={'1.2rem'}
+      boxShadow={'0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);'}
     >
       {links.map((link) => (
         <NavLink
-        style={{padding:"7px 20px"}}
+        className={'links'}
+        style={{padding:"12px 24px"}}
           key={link.to}
           to={link.to}
           fontWeight="semibold"
           color="gray.900"
-          _hover={{ color: "teal.500" }}
+          _hover={{ backgroundColor: "#32bb78", color: "white" }}
         >
           {link.name}
         </NavLink>

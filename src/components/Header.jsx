@@ -1,6 +1,6 @@
 import React from "react";
 import UserAuth from "./UserAuth";
-import { useDisclosure } from "@chakra-ui/react";
+import { DrawerCloseButton, useDisclosure } from "@chakra-ui/react";
 import {
   Heading,
   Flex,
@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { CgMenuCheese } from "react-icons/cg";
 import Navbar from "./Navbar";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   // const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -32,42 +33,54 @@ const Header = () => {
       <Heading className="sr-only" color={"#32bb78"}>
         SwiftRides
       </Heading>
-    <Flex alignItems={"center"}>
-    <UserAuth />
-    <Flex display={{ base: "flex", lg: "none" }}>
-        <Button
-          ref={btnRef}
-          onClick={onOpen}
-          p={2}
-          color="gray.700"
-          _hover={{ bg: "teal.100" }}
+              <Flex
+          display={{ base: "none", lg: "flex" }}
+          align="center"
+          color="gray.900"
+          fontSize="sm"
+          fontWeight="semibold"
         >
-          <CgMenuCheese />
-        </Button>
-        <Drawer
-          isOpen={isOpen}
-          placement="right"
-          onClose={onClose}
-          finalFocusRef={btnRef}
-        >
-          <DrawerOverlay />
-          <DrawerContent>
-            <Navbar/>
-          </DrawerContent>
-        </Drawer>
-      </Flex>
+          <Navbar />
+        </Flex>
+      <Flex alignItems={"center"}>
+        <Flex display={{ base: "flex", lg: "none" }}>
+          <Button
+          h={'30px'}
+            ref={btnRef}
+            onClick={onOpen}
+            p={2}
+            color="gray.700"
+            _hover={{ bg: "#32bb78" }}
+          >
+            <CgMenuCheese size={'1.5rem'}/>
+          </Button>
+          <Drawer
+            isOpen={isOpen}
+            placement="right"
+            onClose={onClose}
+            finalFocusRef={btnRef}
+          >
+            <DrawerOverlay />
+            <DrawerContent>
+              <DrawerCloseButton />
+              <NavLink className="links" to={"/"}>
+                Home
+              </NavLink>
+              <NavLink className="links" to={"/About"}>
+                About
+              </NavLink>
+              <NavLink className="links" to={"/Contact"}>
+                Contact
+              </NavLink>
+              <NavLink className="links" to={"/Hire"}>
+                Hire
+              </NavLink>
+            </DrawerContent>
+          </Drawer>
+        </Flex>
 
-      <Flex
-        display={{ base: "none", lg: "flex" }}
-        align="center"
-        color="gray.900"
-        fontSize="sm"
-        fontWeight="semibold"
-      >
-        <Navbar />
+        <UserAuth />
       </Flex>
-    </Flex>
-     
     </Flex>
   );
 };
