@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import Header from "./Header";
 import CarItem from "./CarItems";
 import { Flex, Spinner, Text, Center } from "@chakra-ui/react";
-import DatePicker from "./DatePicker"
+import DatePicker from "./DatePicker";
 
 function Hire() {
   const [carData, setCarData] = useState(null);
   const [loadState, setLoadState] = useState(true);
+  const [searchText, setSearchText] = useState(""); // New state for search text
+
   const url = `http://localhost:3000/cars`;
   useEffect(() => {
     setTimeout(() => {
@@ -26,11 +28,13 @@ function Hire() {
       fetchCars();
     }, 1000);
   }, [url]);
+
   console.log(carData);
+
   return (
     <>
       <Header />
-      <Center> <DatePicker/> </Center>
+      <Center> <DatePicker setSearchText={setSearchText}/> </Center> {/* Pass setSearchText */}
       {loadState ? (
         <Flex
           justify={"center"}
@@ -48,12 +52,12 @@ function Hire() {
           />
           <Text fontWeight={"bold"}>Please wait, Loading data..</Text>
         </Flex>
-        
       ) : (
-        <CarItem  data={carData} />
+        <CarItem  data={carData.filter(car => car.model.toLowerCase().includes(searchText.toLowerCase()))} /> /* Filter carData based on searchText */
       )}
     </>
   );
 }
 
 export default Hire;
+
