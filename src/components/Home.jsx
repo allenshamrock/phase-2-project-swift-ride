@@ -4,9 +4,11 @@ import herovideo from "../assets/SwiftHero.mp4";
 import Header from "./Header";
 import DatePicker from "./DatePicker";
 import VehicleSlider from "./vehicle/VehicleSlider";
+import About from "./About";
+import Contact from "./Contact";
 
 
-function Hero() {
+function Home() {
   return (
     <>
     <div className="hero">
@@ -25,8 +27,10 @@ function Hero() {
       </div>
     </div>
     <VehicleSlider/>
+    <About/>
+    <Contact/>
     </>
   );
 }
 
-export default Hero;
+export default Home;
