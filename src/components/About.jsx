@@ -25,7 +25,7 @@ function About() {
         overflow={"hidden"}
       >
         <Box
-          width={{ base: "350px", md: "550px" }}
+          width={{ base: "420px", md: "600px" }}
           display={"flex"}
           alignItems={"center"}
           justifyContent={"center"}
