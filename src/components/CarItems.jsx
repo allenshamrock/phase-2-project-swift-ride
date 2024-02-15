@@ -261,6 +261,4 @@ CarItems.propTypes = {
 export default CarItems;
 
 
-CarItems.propTypes = {
-  data: PropTypes.array,
-};
+
