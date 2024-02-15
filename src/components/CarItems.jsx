@@ -104,7 +104,7 @@ function CarItems({ data }) {
               >
                 price per day: &nbsp; {Math.floor(car.price_per_day * 150)} KES
               </Text>
-              <Button _hover={'teal.100'} color={"#fff"} bg={"#32bb78"} w={"100%"}>
+              <Button  color={"#fff"} bg={"#32bb78"} w={"100%"}>
                 Hire
               </Button>
             </CardBody>
