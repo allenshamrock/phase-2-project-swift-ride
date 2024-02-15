@@ -9,11 +9,11 @@ import {
 } from "@chakra-ui/layout";
 import { IoIosMail } from "react-icons/io";
 import { FaPhoneVolume } from "react-icons/fa6";
-import { HiLocationMarker } from "react-icons/hi";
+import { MdLocationCity } from "react-icons/md";
 import { TbClock24 } from "react-icons/tb";
-import Header from "./Header";
 import { CardBody } from '@chakra-ui/react';
 import { Card } from "@chakra-ui/card";
+import Header from "./Header";
 
 function Contact() {
   const CardData = [
@@ -67,7 +67,7 @@ function Contact() {
     <>
       <Header />
       <Box p={"20px"} pt={"100px"}>
-        <Heading textAlign="center"py={"50px"}>Get In Touch</Heading>
+        <Heading textAlign="center"py={"30px"}>Get In Touch</Heading>
         <SimpleGrid
           spacing={8}
           minChildWidth={"350px"}
@@ -99,7 +99,7 @@ function Contact() {
                     <Text>{card.Phone}</Text>
                   </Flex>
                   <Flex gap={"8px"} alignItems={"center"}>
-                    <HiLocationMarker fontSize={"1.5rem"} />
+                    <MdLocationCity fontSize={"1.5rem"} />
                     <Text>{card.Address}</Text>
                   </Flex>
                 </Flex>
@@ -139,7 +139,7 @@ function Contact() {
         <Heading textAlign={"center"} py={"50px"}>
           Frequently Asked Questions
         </Heading>
-        <SimpleGrid spacing={8} minChildWidth={"550px"}>
+        <SimpleGrid spacing={8} minChildWidth={{base:"200px",md:"550px"}}>
           {faqs.map((faq, index) => {
             return (
               <Card key={index}>

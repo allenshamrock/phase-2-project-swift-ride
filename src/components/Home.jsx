@@ -1,12 +1,11 @@
-import { Heading } from "@chakra-ui/react";
+import { Heading, Text } from "@chakra-ui/react";
 import herovideo from "../assets/SwiftHero.mp4";
 // import bgvideo from "../assets/SwiftHero.mp4";
 import Header from "./Header";
-import DatePicker from "./DatePicker";
 import VehicleSlider from "./vehicle/VehicleSlider";
 
 
-function Hero() {
+function Home() {
   return (
     <>
     <div className="hero">
@@ -15,12 +14,11 @@ function Hero() {
       <div className="content">
         <Header/>
        <div>
-       <Heading color={'#32bb78'} fontWeight={'bold'}>Welcome to Swift Rides Car Rental</Heading>
-        <p className="welcome">
-          Discover comfort, safety, and style with our premium car fleet,<br /> Book
+       <Heading color={'#32bb78'} fontWeight={'bold'}>Welcome to Swift Rides</Heading>
+        <Text maxW={'450px'} minWidth={'200px'} className="welcome" >
+          Discover comfort, safety, and style with our premium car fleet,Book
           effortlessly for a memorable journey.
-        </p>
-    <DatePicker/>
+        </Text>
        </div>
       </div>
     </div>
@@ -29,4 +27,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default Home;
