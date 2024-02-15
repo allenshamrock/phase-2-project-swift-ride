@@ -1,7 +1,7 @@
 import { Heading, Text } from "@chakra-ui/react";
 import herovideo from "../assets/SwiftHero.mp4";
 // import bgvideo from "../assets/SwiftHero.mp4";
-import Header from "./Header";
+// import Header from "./Header";
 import VehicleSlider from "./vehicle/VehicleSlider";
 
 
@@ -12,7 +12,7 @@ function Home() {
       <div className="overlay"></div>
       <video src={herovideo} autoPlay loop muted/>
       <div className="content">
-        <Header/>
+        {/* <Header/> */}
        <div>
        <Heading color={'#32bb78'} fontWeight={'bold'}>Welcome to Swift Rides</Heading>
         <Text maxW={'450px'} minWidth={'200px'} className="welcome" >
