@@ -5,12 +5,12 @@ import {
   Image,
   Text
 } from "@chakra-ui/react";
-import Header from "./Header";
+// import Header from "./Header";
 
 function About() {
   return (
     <>
-    <Header/>
+    {/* <Header/> */}
     <Box
       pt={"100px"}
       display={"flex"}
