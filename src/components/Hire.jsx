@@ -50,7 +50,7 @@ function Hire() {
         </Flex>
         
       ) : (
-        <CarItem  data={carData}/>
+        <CarItem  data={carData} />
       )}
     </>
   );

@@ -28,3 +28,15 @@ export const signupValidationSchema = Yup.object().shape({
     "Passwords must match"
   ),
 });
+
+
+ export const paymentValidationSchema = Yup.object().shape({
+   firstName: Yup.string()
+     .min(2, "Too Short!")
+     .max(70, "Too Long!")
+     .required("required"),
+   lastName: Yup.string().required("required"),
+   amount: Yup.number()
+     .positive("Amount must be a positive number")
+     .required("Required"),
+ });
