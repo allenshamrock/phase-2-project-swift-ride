@@ -45,10 +45,10 @@ const VehicleSlider = () => {
   const OnDesktop = layout.is("desktop");
 
   const displayVehicles = vehicles.map((vehicle) => (
-    <SplideSlide key={vehicle.id}>
-      <Box textAlign={"center"} gap={"1"}>
+    <SplideSlide m={'auto'} key={vehicle.id}>
+      <Box textAlign={"center"} >
         <Card
-          maxW="sm"
+          maxW="md"
           boxShadow={"0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);"}
           rounded="md"
           maxH={"500px"}
@@ -57,7 +57,7 @@ const VehicleSlider = () => {
             <Flex w="100%">
               <Image
                 objectFit="cover"
-                w={"100vw"}
+                w={"100vw"} h={'280px'}
                 src={vehicle.image}
                 alt="vehicle image"
                 borderRadius="lg"
@@ -69,7 +69,6 @@ const VehicleSlider = () => {
               {vehicle.model}
             </Heading>
             <Stack mt="6" spacing="3" flexDirection={"column"} >
-              <Text>Color: {vehicle.color} </Text>
               <Text>Gear Box: {vehicle.gearbox}</Text>
               <Text>Vehicle type: {vehicle.vehicle_type}</Text>
               <Text>Year : {vehicle.year}</Text>
@@ -99,11 +98,11 @@ const VehicleSlider = () => {
         <Splide
           options={{
             perPage: 3,
-            arrows: false,
+            arrows: true,
             pauseOnHover: true,
             pauseOnFocus: true,
             pagination: false,
-            autoplay: true,
+            autoplay: false,
             speed: 5500,
             type: "loop",
             interval: 4000,
@@ -121,7 +120,7 @@ const VehicleSlider = () => {
             perPage: 2,
             arrows: false,
             autoplay: true,
-            speed: 6000,
+            speed: 10000,
             pagination: false,
             type: "loop",
             interval: 5000,

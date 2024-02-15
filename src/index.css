@@ -4,13 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* body {
-
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+body {
+position: relative;
+}
 .date-picker {
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -113,8 +109,6 @@ video{
   font-size: 1.2rem;
 }
 
-
-
 .active{
   background: #32bb78;
   color: #fff;
@@ -123,3 +117,7 @@ video{
   background: #32bb78;
   color: #fff;
 } 
+.drawer-link{
+  line-height: 50px;
+  padding-left: 20px;
+}

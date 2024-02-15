@@ -24,11 +24,12 @@ const Header = () => {
       align="center"
       justifyContent="space-between"
       wrap="wrap"
-      padding="6"
+      p={{base:"1", md:"6"}}
       top={"0"}
       position={"absolute"}
       color="gray.900"
       width={"100%"}
+      zIndex={'1'}
     >
       <Heading className="sr-only" color={"#32bb78"}>
         SwiftRides
@@ -59,20 +60,21 @@ const Header = () => {
             placement="right"
             onClose={onClose}
             finalFocusRef={btnRef}
+            
           >
             <DrawerOverlay />
             <DrawerContent>
               <DrawerCloseButton />
-              <NavLink className="links" to={"/"}>
+              <NavLink className="links drawer-link" to={"/"}>
                 Home
               </NavLink>
-              <NavLink className="links" to={"/About"}>
+              <NavLink className="links drawer-link" to={"/About"}>
                 About
               </NavLink>
-              <NavLink className="links" to={"/Contact"}>
+              <NavLink className="links drawer-link" to={"/Contact"}>
                 Contact
               </NavLink>
-              <NavLink className="links" to={"/Hire"}>
+              <NavLink className="links drawer-link" to={"/Hire"}>
                 Hire
               </NavLink>
             </DrawerContent>

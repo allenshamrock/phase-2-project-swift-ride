@@ -5,11 +5,14 @@ import {
   Image,
   Text
 } from "@chakra-ui/react";
+import Header from "./Header";
 
 function About() {
   return (
+    <>
+    <Header/>
     <Box
-      py={"40px"}
+      pt={"100px"}
       display={"flex"}
       alignItems={"center"}
       justifyContent={"center"}
@@ -25,7 +28,7 @@ function About() {
         overflow={"hidden"}
       >
         <Box
-          width={{ base: "420px", md: "600px" }}
+          width={{ base: "380px", md: "600px" }}
           display={"flex"}
           alignItems={"center"}
           justifyContent={"center"}
@@ -33,6 +36,7 @@ function About() {
           bg={"#32bb78"}
           borderRadius={"lg"}
           p={"10px"}
+          
           position={{ base: "static", md: "absolute" }}
           h={{ base: "auto", md: "350px" }}
           top={40}
@@ -55,7 +59,7 @@ function About() {
         I
         <Image
           objectFit="cover"
-          maxW={{ base: "100vw", md: "60vw" }}
+          maxW={{ base: "100vw",sm:"60vh", md: "70vw" }}
           display={{ base: "none", md: "block" }}
           borderRadius={"lg"}
           src="https://plus.unsplash.com/premium_photo-1661636643271-de8ae41c91b1?q=80&w=3538&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -64,6 +68,7 @@ function About() {
       </Box>
       <Countup />
     </Box>
+    </>
   );
 }
 
