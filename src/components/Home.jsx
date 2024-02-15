@@ -15,7 +15,7 @@ function Home() {
         <Header/>
        <div>
        <Heading color={'#32bb78'} fontWeight={'bold'}>Welcome to Swift Rides</Heading>
-        <Text maxW={'450px'} minWidthw={'200px'} className="welcome" >
+        <Text maxW={'450px'} minWidth={'200px'} className="welcome" >
           Discover comfort, safety, and style with our premium car fleet,Book
           effortlessly for a memorable journey.
         </Text>

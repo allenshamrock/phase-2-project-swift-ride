@@ -1,7 +1,7 @@
-import React from 'react';
+// import React from 'react';
 import './Footer.css';
 import { FaInstagram, FaWhatsapp, FaFacebook, FaTwitter, FaLinkedin, FaComment } from 'react-icons/fa';
-import { SiVisa, SiMastercard, SiPaypal, SiAmericanexpress, SiDiscover } from 'react-icons/si';
+// import { SiVisa, SiMastercard, SiPaypal, SiAmericanexpress, SiDiscover } from 'react-icons/si';
 
 const Footer = () => {
   return (
