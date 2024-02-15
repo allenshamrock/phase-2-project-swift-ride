@@ -12,7 +12,7 @@ import PropTypes from "prop-types";
 
 function CarItems({ data }) {
   return (
-    <Flex flexWrap={"wrap"} pt={"100px"} gap={"20px"} justifyContent={"center"}>
+    <Flex flexWrap={"wrap"} pt={"50px"} gap={"20px"} justifyContent={"center"}>
       {data.map((car) => {
         return (
           <Card
