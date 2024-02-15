@@ -59,6 +59,7 @@ function CarItems({ data }) {
 
   return (
     <Flex flexWrap={"wrap"} pt={"50px"} gap={"20px"} justifyContent={"center"}>
+
       {data.map((car) => {
         return (
           <Card
@@ -110,6 +111,7 @@ function CarItems({ data }) {
           </Card>
         );
       })}
+
       {data.map((car) => (
         <Card
           maxW="sm"

@@ -1,110 +1,110 @@
 .footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  background-color: #111;
-  padding: 1rem;
-  padding: 20px;
-  width: 100%;
-}
-
-.connect-section,
-.payment-section,
-.reviews-section,
-.copyright-section {
-  width: 100%;
-  max-width: 300px;
-  margin-bottom: 20px;
-}
-
-.connect-heading {
-  margin-bottom: 10px;
-}
-
-.social-links-container,
-.payment-icons,
-.list-unstyled {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.social-link,
-.payment-icons .social-link,
-.list-unstyled li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.social-link span {
-  margin-left: 10px;
-}
-.payment-section h2 {
-  color: #32bb78;
-}
-.connect-section h2 {
-  color: #32bb78;
-}
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #111;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .connect-section,
+  .payment-section,
+  .reviews-section,
+  .copyright-section {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .connect-heading {
+    margin-bottom: 10px;
+  }
+  
+  .social-links-container,
+  .payment-icons,
+  .list-unstyled {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .social-link,
+  .payment-icons .social-link,
+  .list-unstyled li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .social-link span {
+    margin-left: 10px;
+  }
+  .payment-section h2 {
+    color: #32bb78; 
+  }
+  .connect-section h2 {
+    color: #32bb78; 
+  }
+  
 .useful-links-section h2 {
-  color: #32bb78;
-}
+    color: #32bb78; 
+  }
 .reviews-section h2 {
-  color: #32bb78;
-}
-
+    color: #32bb78; 
+  }
+  
 .social-links-container span {
-  color: white;
-}
-
+    color: white;
+  }
+  
 .social-links-container .social-link span,
 .social-links-container .social-link svg {
   color: white;
 }
 .payment-section h3 {
-  color: white;
-}
-
-@media (min-width: 768px) {
-  .connect-section,
-  .payment-section,
-  .reviews-section,
+    color: white;
+  }
+  
+  @media (min-width: 768px) {
+    .connect-section,
+    .payment-section,
+    .reviews-section,
+    .copyright-section {
+      width: calc(33.33% - 20px);
+      margin-right: 20px;
+    }
+  }
+  .useful-links-section a {
+    color: white;
+  }
+  .reviews-section {
+    color: white;
+  }
   .copyright-section {
-    width: calc(33.33% - 20px);
-    margin-right: 20px;
+    color: grey;
   }
-}
-.useful-links-section a {
-  color: white;
-}
-.reviews-section {
-  color: white;
-}
-.copyright-section {
-  color: grey;
-}
-
-@media (min-width: 992px) {
-  .footer-container {
-    justify-content: space-between;
+  
+  @media (min-width: 992px) {
+    .footer-container {
+      justify-content: space-between;
+    }
   }
-}
-
-/* Copyright and Contact Section */
-.contact-section {
-  background-color: #1a1a1a;
-  color: #141313;
-  padding: 20px;
-  border-radius: 5px;
+  
+  /* Copyright and Contact Section */
+  .contact-section {
+    background-color: #1a1a1a;
+    color: #141313;
+    padding: 20px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 300px; 
+  }
+ .footer-container .copyright-section {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 300px;
+  width: 100%; 
 }
-.footer-container .copyright-section {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-}
+  

@@ -7,15 +7,20 @@ import Footer from "./components/Footer"
 function Applayout() {
   return (
     <>
+
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Hire" element={<Hire />} />
       </Routes>
+
     <Footer />
     
+
     </>
+
   );
 }
 
