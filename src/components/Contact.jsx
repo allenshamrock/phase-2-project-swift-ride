@@ -13,6 +13,7 @@ import { MdLocationCity } from "react-icons/md";
 import { TbClock24 } from "react-icons/tb";
 import { CardBody } from '@chakra-ui/react';
 import { Card } from "@chakra-ui/card";
+import Header from "./Header";
 
 function Contact() {
   const CardData = [
@@ -64,9 +65,9 @@ function Contact() {
 
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Box p={"20px"} pt={"100px"}>
-        <Heading textAlign="center"py={"20px"}>Get In Touch</Heading>
+        <Heading textAlign="center"py={"30px"}>Get In Touch</Heading>
         <SimpleGrid
           spacing={8}
           minChildWidth={"350px"}

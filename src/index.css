@@ -113,8 +113,6 @@ video{
   font-size: 1.2rem;
 }
 
-
-
 .active{
   background: #32bb78;
   color: #fff;
@@ -123,3 +121,7 @@ video{
   background: #32bb78;
   color: #fff;
 } 
+.drawer-link{
+  line-height: 50px;
+  padding-left: 20px;
+}
