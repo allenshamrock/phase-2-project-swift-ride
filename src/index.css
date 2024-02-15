@@ -112,35 +112,9 @@ video{
   letter-spacing: 1px;
   font-size: 1.2rem;
 }
-.header{
-  width: 100%;
-  position: absolute;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 50px;
-  margin-top: 10px;
-}
-nav{
-  display: flex;
-  color: #32bb78;
 
-}
-li{
-  list-style: none;
-  font-size: 1rem;
-}
-nav{
-  background: #fff;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-.links{
-  padding: 15px 35px;
-  font-weight: 600;
-  color: #32bb78;
-  font-size: 1.05rem;
-}
+
+
 .active{
   background: #32bb78;
   color: #fff;
@@ -148,4 +122,4 @@ nav{
 .links:hover{
   background: #32bb78;
   color: #fff;
-}
+} 

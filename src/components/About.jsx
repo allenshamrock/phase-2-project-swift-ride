@@ -19,7 +19,7 @@ function About() {
           <p>
             Welcome to SwiftRides, your go-to destination for reliable and affordable car rentals.
             Whether you need a car for a business trip, vacation, or daily commute, we've got you covered.
-            Our extensive fleet of vehicles ensures that you'll find the perfect ride for your needs.
+            Our extensive fleet of vehicles ensures that you'll find the perfect ride for your needs
             With convenient booking options and exceptional customer service, we make renting a car a breeze.
           </p>
         </Box>
