@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Header from "./Header";
+// import Header from "./Header";
 import CarItem from "./CarItems";
 import { Flex, Spinner, Text, Center } from "@chakra-ui/react";
 import DatePicker from "./DatePicker";
@@ -33,7 +33,7 @@ function Hire() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Center> <DatePicker setSearchText={setSearchText}/> </Center> {/* Pass setSearchText */}
       {loadState ? (
         <Flex
