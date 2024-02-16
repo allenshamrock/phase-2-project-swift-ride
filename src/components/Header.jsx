@@ -1,8 +1,8 @@
 import React from "react";
 import UserAuth from "./UserAuth";
-import { DrawerCloseButton, useDisclosure } from "@chakra-ui/react";
+import swiftlogo from "../assets/swift-logo.png"
+import { DrawerCloseButton, Image, useDisclosure } from "@chakra-ui/react";
 import {
-  Heading,
   Flex,
   Button,
   Drawer,
@@ -31,9 +31,7 @@ const Header = () => {
       width={"100%"}
       zIndex={'1'}
     >
-      <Heading className="sr-only" color={"#32bb78"}>
-        SwiftRides
-      </Heading>
+      <Image src={swiftlogo} alt="logo" h={24}/>
               <Flex
           display={{ base: "none", lg: "flex" }}
           align="center"

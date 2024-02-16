@@ -22,15 +22,17 @@ function Countup() {
       flexWrap={"wrap"}
       justifyContent={"center"}
       alignItems={"center"}
+      my={8}
     >
       {stats.map((stat, index) => {
         return (
-          <Card boxShadow={'md'} mt={'10px'} maxW="sm" key={index} w={"250px"} alignItems={"center"} justifyContent={'center'} h={'120px'}>
+      
+          <Card  bg={'#32bb78'} borderTop={'5px solid #111'} maxW="sm" key={index} w={"250px"} alignItems={"center"} justifyContent={'center'} h={'120px'} boxShadow={'0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);'}>
             {stat.icons}
-            <Heading>
+            <Heading color={'#fff'}>
               <CountUp start={0} end={stat.amount} duration={3.25}></CountUp>+
             </Heading>
-            <Text fontWeight={"md"} letterSpacing={"1px"} color={"#32bb78"}>
+            <Text fontWeight={"md"} textTransform={'lowercase'} letterSpacing={"1px"} color={"#111"}>
               {stat.category}
             </Text>
           </Card>
