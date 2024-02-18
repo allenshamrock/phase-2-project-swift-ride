@@ -66,8 +66,8 @@ function Contact() {
   return (
     <>
       {/* <Header /> */}
-      <Box p={"20px"} pt={"100px"}>
-        <Heading textAlign="center"py={"30px"}>Get In Touch</Heading>
+      <Box p={"20px"} id="Contact">
+        <Heading textAlign="center"py={"25px"}>Get In Touch</Heading>
         <SimpleGrid
           spacing={8}
           minChildWidth={"350px"}
