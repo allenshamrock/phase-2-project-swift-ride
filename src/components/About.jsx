@@ -13,14 +13,15 @@ function About() {
     <>
     {/* <Header/> */}
     <Box
-      pt={"120px"}
+      pt={"10px"}
       display={"flex"}
       alignItems={"center"}
       justifyContent={"center"}
       flexDirection={"column"}
       position={"relative"}
+      id="About"
     >
-      <Heading textAlign={"center"} >About Us</Heading>
+      <Heading textAlign={"center"} p={'10px'} >About Us</Heading>
 
       <Box
         direction={{ base: "column", sm: "row" }}

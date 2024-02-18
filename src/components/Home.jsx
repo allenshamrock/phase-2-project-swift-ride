@@ -3,12 +3,14 @@ import herovideo from "../assets/SwiftHero.mp4";
 // import bgvideo from "../assets/SwiftHero.mp4";
 // import Header from "./Header";
 import VehicleSlider from "./vehicle/VehicleSlider";
+import About from "./About";
+import Contact from "./Contact";
 
 
 function Home() {
   return (
     <>
-    <div className="hero">
+    <div className="hero" id="Home">
       <div className="overlay"></div>
       <video src={herovideo} autoPlay loop muted/>
       <div className="content">
@@ -23,6 +25,8 @@ function Home() {
       </div>
     </div>
     <VehicleSlider/>
+    <About/>
+    <Contact/>
     </>
   );
 }

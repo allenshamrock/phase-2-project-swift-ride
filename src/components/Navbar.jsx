@@ -1,12 +1,12 @@
 // import React from 'react';
 import { Flex } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import {HashLink as NavLink } from "react-router-hash-link";
 
 const Navbar = () => {
   const links = [
-    { name: "Home", to: "/" },
-    { name: "About", to: "/About" },
-    { name: "Contact", to: "/Contact" },
+    { name: "Home", to: "/#" },
+    { name: "About", to: "/#About" },
+    { name: "Contact", to: "/#Contact" },
     { name: "Hire", to: "/Hire" },
   ];
 
@@ -28,6 +28,7 @@ const Navbar = () => {
           fontWeight="semibold"
           color="gray.900"
           _hover={{ backgroundColor: "#32bb78", color: "white" }}
+          smooth
         >
           {link.name}
         </NavLink>

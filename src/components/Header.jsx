@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { CgMenuCheese } from "react-icons/cg";
 import Navbar from "./Navbar";
-import { NavLink } from "react-router-dom";
+import {HashLink as NavLink } from "react-router-hash-link";
 
 const Header = () => {
   // const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -24,7 +24,7 @@ const Header = () => {
       align="center"
       justifyContent="space-between"
       wrap="wrap"
-      p={{base:"1", md:"6"}}
+      // p={{base:"1", md:"6"}}
       top={"0"}
       position={"absolute"}
       color="gray.900"
@@ -63,16 +63,16 @@ const Header = () => {
             <DrawerOverlay />
             <DrawerContent>
               <DrawerCloseButton />
-              <NavLink className="links drawer-link" to={"/"}>
+              <NavLink className="links drawer-link" to={"/#"} smooth>
                 Home
               </NavLink>
-              <NavLink className="links drawer-link" to={"/About"}>
+              <NavLink className="links drawer-link" to={"/#About"} smooth>
                 About
               </NavLink>
-              <NavLink className="links drawer-link" to={"/Contact"}>
+              <NavLink className="links drawer-link" to={"/#Contact"} smooth>
                 Contact
               </NavLink>
-              <NavLink className="links drawer-link" to={"/Hire"}>
+              <NavLink className="links drawer-link" to={"/Hire"} smooth>
                 Hire
               </NavLink>
             </DrawerContent>
