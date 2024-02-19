@@ -12,8 +12,8 @@ function About() {
   return (
     <>
     {/* <Header/> */}
-    <Box
-      pt={"10px"}
+    <Box 
+      pt={"50px"}
       display={"flex"}
       alignItems={"center"}
       justifyContent={"center"}
