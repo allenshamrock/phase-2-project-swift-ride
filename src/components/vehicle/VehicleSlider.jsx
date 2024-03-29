@@ -65,7 +65,7 @@ const VehicleSlider = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("http://localhost:3000/offers");
+        const response = await fetch("https://swift-ride-backend.onrender.com/offers");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

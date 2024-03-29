@@ -9,7 +9,7 @@ function Hire() {
   const [loadState, setLoadState] = useState(true);
   const [searchText, setSearchText] = useState(""); // New state for search text
 
-  const url = `http://localhost:3000/cars`;
+  const url = `https://swift-ride-backend.onrender.com/cars`;
   useEffect(() => {
     setTimeout(() => {
       const fetchCars = async () => {
