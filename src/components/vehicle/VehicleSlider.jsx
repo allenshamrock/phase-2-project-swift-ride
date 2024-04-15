@@ -24,6 +24,7 @@ import {
   FormControl,
   FormLabel,
   Input,
+  Spinner,
   FormErrorMessage,
 } from "@chakra-ui/react";
 import { Formik, Form, Field } from "formik";
@@ -32,6 +33,7 @@ import { paymentValidationSchema } from "../../Schemas";
 const VehicleSlider = () => {
   const [vehicles, setVehicles] = useState([]);
   const [selectedCar, setSelectedCar] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
 
@@ -62,22 +64,24 @@ const VehicleSlider = () => {
   };
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch(
-          "https://swift-ride-backend.onrender.com/offers"
-        );
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
+    setTimeout(() => {
+      async function fetchData() {
+        try {
+          const response = await fetch(
+            "https://swift-ride-backend.onrender.com/offers"
+          );
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          const data = await response.json();
+          setVehicles(data);
+          setIsLoading(false);
+        } catch (error) {
+          console.error("Error fetching data:", error);
         }
-        const data = await response.json();
-        setVehicles(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
       }
-    }
-
-    fetchData();
+      fetchData();
+    }, 1000);
   }, []);
 
   const displayVehicles = vehicles.map((vehicle) => (
@@ -227,32 +231,51 @@ const VehicleSlider = () => {
       <Text textAlign={"center"} fontSize={"2rem"} fontWeight={"bold"} p={"3"}>
         Special offers
       </Text>
-      <Splide
-        options={{
-          perPage: 3,
-          breakpoints: {
-            1024: {
-              perPage: 2,
+      {isLoading ? (
+        <Flex
+          justify={"center"}
+          alignItems={"center"}
+          flexDirection={"column"}
+          gap={"10px"}
+          h={"80vh"}
+        >
+          <Spinner
+            thickness="4px"
+            speed="0.65s"
+            emptyColor="gray.200"
+            color={"#32bb78"}
+            size="xl"
+          />
+          <Text fontWeight={"bold"}>Please wait, Loading data..</Text>
+        </Flex>
+      ) : (
+        <Splide
+          options={{
+            perPage: 3,
+            breakpoints: {
+              1024: {
+                perPage: 2,
+              },
+              768: {
+                perPage: 1,
+              },
             },
-            768: {
-              perPage: 1,
-            },
-          },
-          arrows: true,
-          pauseOnHover: true,
-          pauseOnFocus: true,
-          pagination: false,
-          autoplay: false,
-          speed: 5500,
-          type: "loop",
-          interval: 4000,
-          rewindByDrag: true,
-          drag: "free",
-          gap: "2rem",
-        }}
-      >
-        {displayVehicles}
-      </Splide>
+            arrows: true,
+            pauseOnHover: true,
+            pauseOnFocus: true,
+            pagination: false,
+            autoplay: false,
+            speed: 5500,
+            type: "loop",
+            interval: 4000,
+            rewindByDrag: true,
+            drag: "free",
+            gap: "2rem",
+          }}
+        >
+          {displayVehicles}
+        </Splide>
+      )}
     </Box>
   );
 };
